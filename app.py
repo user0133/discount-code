@@ -105,7 +105,7 @@ def update_coupon(brand_id, id, coupon_status):
 
 # Delete a Coupon
 @app.route('/admin/<brand_id>/coupon/<id>', methods=['DELETE'])
-def delete_coupon(id):
+def delete_coupon(brand_id, id):
   coupon = Coupon.query.get(id)
   db.session.delete(coupon)
   db.session.commit()
